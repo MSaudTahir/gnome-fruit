@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-fruit">
+  <enum id="org.gnome.shell.extensions.gnome-fruit.dock-autohide">
+    <value nick="never" value="0"/>
+    <value nick="intellihide" value="1"/>
+    <value nick="always" value="2"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.gnome-fruit.minimize-effect">
+    <value nick="genie" value="0"/>
+    <value nick="scale" value="1"/>
+    <value nick="default" value="2"/>
+  </enum>
+
+  <enum id="org.gnome.shell.extensions.gnome-fruit.hot-corner-action">
+    <value nick="none" value="0"/>
+    <value nick="mission-control" value="1"/>
+    <value nick="launchpad" value="2"/>
+    <value nick="notification-center" value="3"/>
+    <value nick="lock-screen" value="4"/>
+    <value nick="show-desktop" value="5"/>
+    <value nick="app-expose" value="6"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.gnome-fruit"
+          path="/org/gnome/shell/extensions/gnome-fruit/">
+
+    <!-- Stage Manager -->
+    <key name="stage-manager-enabled" type="b">
+      <default>true</default>
+      <summary>Enable Stage Manager</summary>
+    </key>
+    <key name="stage-manager-max-groups" type="i">
+      <range min="1" max="10"/>
+      <default>6</default>
+      <summary>Maximum number of recent app groups shown in the strip</summary>
+    </key>
+    <key name="stage-manager-group-by-app" type="b">
+      <default>true</default>
+      <summary>Keep all windows of an app in the same group</summary>
+    </key>
+    <key name="stage-manager-avoid-strip" type="b">
+      <default>true</default>
+      <summary>Move new windows so they do not cover the strip</summary>
+    </key>
+    <key name="stage-manager-tilt" type="d">
+      <range min="0" max="45"/>
+      <default>0</default>
+      <summary>Perspective tilt of strip thumbnails, in degrees</summary>
+    </key>
+    <key name="stage-manager-toggle" type="as">
+      <default><![CDATA[['<Control><Super>s']]]></default>
+      <summary>Keyboard shortcut to toggle Stage Manager</summary>
+    </key>
+
+    <!-- Spaces -->
+    <key name="fullscreen-spaces" type="b">
+      <default>true</default>
+      <summary>Give full-screen windows their own workspace</summary>
+    </key>
+
+    <key name="maximize-fullscreen" type="b">
+      <default>true</default>
+      <summary>Maximizing a window makes it full screen, like a full-screen button</summary>
+    </key>
+    <key name="toggle-fullscreen-shortcut" type="as">
+      <default><![CDATA[['<Control><Super>f']]]></default>
+      <summary>Keyboard shortcut to toggle full screen for the focused window</summary>
+    </key>
+
+    <!-- Launchpad -->
+    <key name="launchpad-gestures" type="b">
+      <default>true</default>
+      <summary>Pinch with three or more fingers to open and close the Launchpad</summary>
+    </key>
+
+    <!-- Spotlight -->
+    <key name="spotlight-enabled" type="b">
+      <default>true</default>
+      <summary>Enable Spotlight search</summary>
+    </key>
+    <key name="spotlight-shortcut" type="as">
+      <default><![CDATA[['<Super>space']]]></default>
+      <summary>Keyboard shortcut to open Spotlight</summary>
+    </key>
+
+    <!-- Dock -->
+    <key name="dock-enabled" type="b">
+      <default>true</default>
+      <summary>Enable the Dock</summary>
+    </key>
+    <key name="dock-icon-size" type="i">
+      <range min="24" max="128"/>
+      <default>40</default>
+      <summary>Dock icon size in logical pixels</summary>
+    </key>
+    <key name="dock-magnification" type="b">
+      <default>false</default>
+      <summary>Magnify icons under the pointer</summary>
+    </key>
+    <key name="dock-magnification-scale" type="d">
+      <range min="1.0" max="3.0"/>
+      <default>1.7</default>
+      <summary>Maximum magnification factor</summary>
+    </key>
+    <key name="dock-autohide" enum="org.gnome.shell.extensions.gnome-fruit.dock-autohide">
+      <default>'never'</default>
+      <summary>Dock auto-hide behaviour</summary>
+    </key>
+    <key name="dock-minimize-effect" enum="org.gnome.shell.extensions.gnome-fruit.minimize-effect">
+      <default>'genie'</default>
+      <summary>Animation used when minimizing windows into the Dock</summary>
+    </key>
+    <key name="dock-bounce" type="b">
+      <default>true</default>
+      <summary>Bounce icons when apps launch or need attention</summary>
+    </key>
+    <key name="dock-show-apps-button" type="b">
+      <default>true</default>
+      <summary>Show the app grid button in the Dock</summary>
+    </key>
+
+    <key name="dock-zoom-new-windows" type="b">
+      <default>true</default>
+      <summary>New windows zoom out of their app's Dock icon</summary>
+    </key>
+    <key name="dock-show-downloads" type="b">
+      <default>true</default>
+      <summary>Show a Downloads stack in the Dock</summary>
+    </key>
+    <key name="dock-show-recent" type="b">
+      <default>true</default>
+      <summary>Show recently opened apps in the Dock</summary>
+    </key>
+    <key name="dock-recent-apps" type="as">
+      <default>[]</default>
+      <summary>Desktop IDs of recently opened apps, newest first</summary>
+    </key>
+
+    <!-- Menu bar -->
+    <key name="menubar-enabled" type="b">
+      <default>true</default>
+      <summary>System menu, app menu and clock in the top bar</summary>
+    </key>
+    <key name="menubar-fruit-layout" type="b">
+      <default>false</default>
+      <summary>Hide Activities and move the clock to the right in a compact format</summary>
+    </key>
+    <key name="window-buttons-left" type="b">
+      <default>false</default>
+      <summary>Show window close, minimize and maximize buttons on the left</summary>
+    </key>
+    <key name="notifications-right" type="b">
+      <default>false</default>
+      <summary>Show notification banners at the top right</summary>
+    </key>
+    <key name="force-quit-shortcut" type="as">
+      <default><![CDATA[['<Alt><Super>Escape']]]></default>
+      <summary>Keyboard shortcut to open Force Quit</summary>
+    </key>
+
+    <key name="show-desktop-shortcut" type="as">
+      <default><![CDATA[['<Super>d']]]></default>
+      <summary>Keyboard shortcut to show the desktop</summary>
+    </key>
+    <key name="hide-others-shortcut" type="as">
+      <default><![CDATA[['<Alt><Super>h']]]></default>
+      <summary>Keyboard shortcut to hide all other apps</summary>
+    </key>
+
+    <!-- Window tiling -->
+    <key name="tile-left" type="as">
+      <default><![CDATA[['<Control><Super>Left']]]></default>
+      <summary>Tile the window on the left half</summary>
+    </key>
+    <key name="tile-right" type="as">
+      <default><![CDATA[['<Control><Super>Right']]]></default>
+      <summary>Tile the window on the right half</summary>
+    </key>
+    <key name="tile-top" type="as">
+      <default><![CDATA[['<Control><Super>Up']]]></default>
+      <summary>Tile the window on the top half</summary>
+    </key>
+    <key name="tile-bottom" type="as">
+      <default><![CDATA[['<Control><Super>Down']]]></default>
+      <summary>Tile the window on the bottom half</summary>
+    </key>
+    <key name="tile-top-left" type="as">
+      <default><![CDATA[['<Control><Super>u']]]></default>
+      <summary>Tile the window in the top left quarter</summary>
+    </key>
+    <key name="tile-top-right" type="as">
+      <default><![CDATA[['<Control><Super>i']]]></default>
+      <summary>Tile the window in the top right quarter</summary>
+    </key>
+    <key name="tile-bottom-left" type="as">
+      <default><![CDATA[['<Control><Super>j']]]></default>
+      <summary>Tile the window in the bottom left quarter</summary>
+    </key>
+    <key name="tile-bottom-right" type="as">
+      <default><![CDATA[['<Control><Super>k']]]></default>
+      <summary>Tile the window in the bottom right quarter</summary>
+    </key>
+    <key name="tile-fill" type="as">
+      <default><![CDATA[['<Control><Super>Return']]]></default>
+      <summary>Fill the screen with the window</summary>
+    </key>
+    <key name="tile-center" type="as">
+      <default><![CDATA[['<Control><Super>c']]]></default>
+      <summary>Centre the window</summary>
+    </key>
+
+    <!-- Hot corners -->
+    <key name="hot-corner-top-left" enum="org.gnome.shell.extensions.gnome-fruit.hot-corner-action">
+      <default>'mission-control'</default>
+      <summary>Top left hot corner action</summary>
+    </key>
+    <key name="hot-corner-top-right" enum="org.gnome.shell.extensions.gnome-fruit.hot-corner-action">
+      <default>'none'</default>
+      <summary>Top right hot corner action</summary>
+    </key>
+    <key name="hot-corner-bottom-left" enum="org.gnome.shell.extensions.gnome-fruit.hot-corner-action">
+      <default>'none'</default>
+      <summary>Bottom left hot corner action</summary>
+    </key>
+    <key name="hot-corner-bottom-right" enum="org.gnome.shell.extensions.gnome-fruit.hot-corner-action">
+      <default>'none'</default>
+      <summary>Bottom right hot corner action</summary>
+    </key>
+
+    <!-- Trash -->
+    <key name="dock-show-trash" type="b">
+      <default>true</default>
+      <summary>Show the Trash in the Dock</summary>
+    </key>
+  </schema>
+</schemalist>

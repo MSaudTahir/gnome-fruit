@@ -1,0 +1,16 @@
+{
+  "uuid": "gnome-fruit@msaudtahir",
+  "name": "GNOME Fruit",
+  "description": "A Stage Manager and Dock for GNOME Shell.\n\nStage Manager keeps the focused app front and centre and tucks recent apps into a tilted strip on the left. The Dock adds magnification, launch bouncing, a genie minimize effect and auto-hide.",
+  "version": 1,
+  "shell-version": [
+    "50",
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.gnome-fruit",
+  "url": "https://github.com/MSaudTahir/gnome-fruit",
+  "session-modes": [
+    "user",
+    "unlock-dialog"
+  ]
+}
