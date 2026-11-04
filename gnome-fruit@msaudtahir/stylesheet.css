@@ -1,0 +1,354 @@
+/* ---------- Dock ---------- */
+
+.fruit-dock-background {
+  background-color: rgba(36, 36, 36, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+#fruitDockDash .dash-item-container .overview-tile,
+#fruitDockDash .dash-item-container .show-apps,
+#fruitDockDash .fruit-dock-window {
+  background: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  margin: 0 5px;
+  padding: 2px 0 8px 0;
+}
+
+#fruitDockDash .overview-tile .overview-icon,
+#fruitDockDash .show-apps .overview-icon {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+#fruitDockDash .overview-tile:hover .overview-icon,
+#fruitDockDash .show-apps:hover .overview-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+#fruitDockDash .overview-tile:hover .overview-icon,
+#fruitDockDash .overview-tile:focus .overview-icon,
+#fruitDockDash .overview-tile:active .overview-icon,
+#fruitDockDash .overview-tile:checked .overview-icon,
+#fruitDockDash .show-apps:hover .overview-icon,
+#fruitDockDash .show-apps:focus .overview-icon,
+#fruitDockDash .show-apps:checked .overview-icon {
+  background: none;
+  box-shadow: none;
+}
+
+#fruitDockDash .show-apps .show-apps-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#fruitDockDash .app-grid-running-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 99px;
+  background-color: rgba(255, 255, 255, 0.9);
+  offset-y: 7px;
+}
+
+#fruitDockDash .dash-separator {
+  width: 1px;
+  margin: 6px 6px 10px 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.dash-label.fruit-dock-label {
+  background-color: rgba(48, 48, 48, 0.98);
+  border: none;
+  border-radius: 99px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  padding: 4px 12px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+/* ---------- Stage Manager ---------- */
+
+.stage-manager-item {
+  border-radius: 12px;
+}
+
+.stage-manager-shade {
+  background-gradient-direction: horizontal;
+  background-gradient-start: rgba(0, 0, 0, 0.35);
+  background-gradient-end: rgba(0, 0, 0, 0);
+}
+
+.stage-manager-item:focus {
+  box-shadow: 0 0 0 2px -st-accent-color;
+}
+
+/* ---------- Launchpad ---------- */
+
+.fruit-launchpad-background {
+  background-color: rgba(30, 30, 30, 0.97);
+}
+
+.fruit-launchpad-search {
+  border-radius: 99px;
+  padding: 6px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  caret-color: white;
+  selection-background-color: -st-accent-color;
+  box-shadow: none;
+}
+
+.fruit-launchpad-search:focus {
+  background-color: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 0 2px -st-accent-color;
+}
+
+.fruit-launchpad-search StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.fruit-launchpad-search-icon {
+  icon-size: 14px;
+  padding-right: 6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fruit-launchpad-icon.overview-tile {
+  background: none;
+  box-shadow: none;
+}
+
+.fruit-launchpad-icon.overview-tile:hover,
+.fruit-launchpad-icon.overview-tile:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.fruit-launchpad-icon .overview-icon-label,
+.fruit-launchpad-icon .overview-icon StLabel {
+  color: white;
+  font-size: 10pt;
+}
+
+.fruit-launchpad-dots {
+  spacing: 10px;
+}
+
+.fruit-launchpad-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.fruit-launchpad-dot:checked {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- Spotlight ---------- */
+
+.fruit-spotlight {
+  background-color: rgb(44, 44, 44);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.fruit-spotlight-entry {
+  font-size: 14pt;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: white;
+  caret-color: white;
+  selection-background-color: -st-accent-color;
+}
+
+.fruit-spotlight-entry:focus {
+  background: none;
+  box-shadow: none;
+}
+
+.fruit-spotlight-entry StLabel.hint-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fruit-spotlight-entry-icon {
+  icon-size: 22px;
+  padding-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fruit-spotlight-separator {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fruit-spotlight-results {
+  padding: 6px 0;
+}
+
+/* ---------- Menu bar ---------- */
+
+.fruit-app-name {
+  font-weight: bold;
+  padding: 0 2px;
+}
+
+/* ---------- Force Quit ---------- */
+
+.fruit-force-quit-content {
+  spacing: 8px;
+  min-width: 380px;
+}
+
+.fruit-force-quit-title {
+  font-weight: bold;
+  font-size: 13pt;
+}
+
+.fruit-force-quit-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fruit-force-quit-scroll {
+  max-height: 280px;
+}
+
+.fruit-force-quit-list {
+  spacing: 2px;
+}
+
+.fruit-force-quit-row {
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.fruit-force-quit-row:hover,
+.fruit-force-quit-row:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.fruit-force-quit-row:selected {
+  background-color: -st-accent-color;
+}
+
+.fruit-force-quit-icon {
+  padding-right: 10px;
+}
+
+/* ---------- Dock badges ---------- */
+
+.fruit-dock-badge {
+  background-color: #e01b24;
+  color: white;
+  font-size: 8pt;
+  font-weight: bold;
+  min-width: 14px;
+  padding: 1px 4px;
+  border-radius: 99px;
+  border: none;
+  text-align: center;
+}
+
+.fruit-dock-progress {
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 99px;
+}
+
+.fruit-dock-progress-fill {
+  background-color: -st-accent-color;
+  border-radius: 99px;
+}
+
+/* ---------- App Exposé ---------- */
+
+.fruit-expose-background {
+  background-color: rgba(30, 30, 30, 0.9);
+}
+
+.fruit-expose-label {
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.fruit-expose-highlight {
+  border: 3px solid -st-accent-color;
+  border-radius: 12px;
+}
+
+/* Mission Control labels */
+.fruit-mission-label {
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px 6px;
+    border-radius: 99px;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* Spotlight web search row */
+.fruit-spotlight-row {
+  padding: 8px 16px;
+  color: white;
+  border-radius: 8px;
+  margin: 4px 6px;
+}
+
+.fruit-spotlight-row:hover,
+.fruit-spotlight-row:focus {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.fruit-spotlight-row-icon {
+  icon-size: 18px;
+  padding-right: 10px;
+}
+
+/* Dock stack */
+.fruit-stack {
+  padding: 14px;
+  spacing: 8px;
+  background-color: rgb(44, 44, 44);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+.fruit-stack-cell {
+  padding: 6px 4px;
+  border-radius: 10px;
+}
+
+.fruit-stack-cell:hover,
+.fruit-stack-cell:focus {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.fruit-stack-name {
+  color: white;
+  font-size: 0.85em;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.fruit-stack-open {
+  color: white;
+  padding: 4px 14px;
+  border-radius: 8px;
+}
+
+.fruit-stack-open:hover,
+.fruit-stack-open:focus {
+  background-color: rgba(255, 255, 255, 0.16);
+}
